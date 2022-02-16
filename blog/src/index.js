@@ -6,6 +6,10 @@ const app = express();
 const port = 3000;
 
 const route = require("./routes");
+const db = require("./config/db");
+
+// Connect to db
+db.connect();
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -20,7 +24,7 @@ app.engine(
   })
 );
 app.set("view engine", "hbs");
-app.set("views", path.join(__dirname, "resources/views"));
+app.set("views", path.join(__dirname, "resources", "views"));
 
 // Routes init
 route(app);
@@ -30,7 +34,7 @@ route(app);
 // res: response: server nhân request để xử lý xòng trả về 1 response render ra client (res nếu cần databse thì chọc vào dataabse, ...)
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`App listening on port ${port}`);
 });
 
 // Query parameters: Truyền dữ liệu qua chính URL của mình (cú pháp param là "?q="value" từ tham số thư 2 trở đi thì đổi dấu ? thành &ref="value" muốn thêm tham số nữa thì vấn tham số &author"value"")

@@ -1,0 +1,25 @@
+<div class="mt-4" style="padding: 15px">
+  <div class="row">
+    <div class="col-lg-3">
+      <button type="button" class="btn btn-primary">Học ngay</button>
+      <ul>
+        <li>{{course.level}}</li>
+      </ul>
+    </div>
+
+    <div class="col-lg-6">
+      <h2>{{course.name}}</h2>
+      <div>
+        <img
+          width="560"
+          src="{{course.image}}"
+          style="border: 1px solid #333"
+        />
+      </div>
+      <div style="margin-top: 15px; font-size: 20px">
+        {{course.description}}
+      </div>
+    </div>
+    <div class="col-lg-3"></div>
+  </div>
+</div>
