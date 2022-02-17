@@ -10,11 +10,14 @@
     <div class="col-lg-6">
       <h2>{{course.name}}</h2>
       <div>
-        <img
+        <iframe
           width="560"
-          src="{{course.image}}"
+          height="315"
+          src="https://www.youtube.com/embed/{{course.videoID}}"
+          framborder="0"
+          allow="accelerometer"
           style="border: 1px solid #333"
-        />
+        ></iframe>
       </div>
       <div style="margin-top: 15px; font-size: 20px">
         {{course.description}}
